@@ -73,6 +73,11 @@ HOW TO BUILD IT
 #       Start with only the functions you have actually written (see note 2 above),
 #       and come back to add the rest as you go.
 
+import sales_pipeline.extract
+import sales_pipeline.transform
+import sales_pipeline.display
+
+
 
 # `__all__` is a list of strings naming the public API. It does two jobs.
 #
@@ -88,4 +93,7 @@ HOW TO BUILD IT
 # find.
 __all__ = [
     # TODO: list every name you imported above, in the same order.
+    "extract",
+    "transform",
+    "display"
 ]
