@@ -4,3 +4,29 @@ See reflection.md for what makes a good reflection — be specific, use the
 terminology from this assignment (package, module, ETL, coercion, public API,
 relative import, accumulator, group by, unit vs. integration test), and make it
 actionable.
+
+
+I intially found this assignment challenging because the AI in VS code was auto filling
+in everything for me which made it much harder for me to keep up in my understanding at 
+the rate it was going. It also caused there to be errors (because AI is not always right), 
+which were then harder to go back and trace because I had just let it autofil. For example,
+it used "total_revenue" on summary entries that only carry "revenue" and it called 
+print_sales_table on data that was shaped for print_item_table, which caused an error. 
+
+I learned the importance of packages because 3 reports and 3 different questions can then 
+pull from that one package versus 3 separate scripts. find_top_entry(summary, field) ranked 
+items by revenue for Marketing, and then ranked days by revenue and by units for Operations. 
+If that function had been named find_top_item and hardcoded entry["revenue"], 
+we'd have needed a second function for units and a third for days. I also got more
+familiar with coercion where you basically force a value into the type you need so it 
+doesn't reject it. We used it in this assignment to make the function work whether the
+price came as a float or text using "str(value)" and also "except ValueError: return 0.0"
+caught the "float("N/A's")" and so the row would become zero revenue instead of crashing. 
+This was important because the rows given had 4 broken ones and without coercion the 
+finance report would have immedietly collapsed, also important to have in our transform.py file 
+because then we didn't have to write anymore logic anywhere else. 
+
+For the next assignmnet, I'm definitely going to start by turning off the AI coder so I
+can fully do the assignment on my own and don't have to take even more time going back and 
+rereading/redoing/reunderstanding material. 
+
